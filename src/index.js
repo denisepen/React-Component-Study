@@ -1,52 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 const App = () => {
-  return (<div className="ui container comments" >
-    <div className="comment" >
-      <a className="avatar" href = '/'>
-        <img alt="avatar" src={faker.image.avatar()}/>
-      </a>
-      <div classname="content">
-        <a href="/" classname="author">
-          Sam
-        </a>
-        <div className="metadata">
-          <span className="date">Today at 6:00PM</span>
-        </div>
-        <div className="text">Nice Blog Post </div>
-      </div>
-    </div>
-    <div className="comment" >
-      <a className="avatar" href = '/'>
-        <img alt="avatar" src={faker.image.avatar()}/>
-      </a>
-      <div classname="content">
-        <a href="/" classname="author">
-          Sam
-        </a>
-        <div className="metadata">
-          <span className="date">Today at 6:00PM</span>
-        </div>
-        <div className="text">Nice Blog Post </div>
-      </div>
-    </div>
-    <div className="comment" >
-      <a className="avatar" href = '/'>
-        <img alt="avatar" src={faker.image.avatar()}/>
-      </a>
-      <div classname="content">
-        <a href="/" classname="author">
-          Sam
-        </a>
-        <div className="metadata">
-          <span className="date">Today at 6:00PM</span>
-        </div>
-        <div className="text">Nice Blog Post </div>
-      </div>
-    </div>
-  </div>)
+  return (
+    <div className="ui container comments" >
+    <ApprovalCard>
+      <CommentDetail
+        name="Alex"
+        comment={"Nice Post"}
+        avatar={faker.image.avatar()}/>
+    </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetail
+          name="Sam"
+          comment={"Create something New"}
+          avatar={faker.image.avatar()}/>
+        </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetail
+          name="Ray"
+          comment={"I find this exciting"}
+          avatar={faker.image.avatar()}/>
+        </ApprovalCard>    
+    </div>)
 }
 
 ReactDOM.render(<App />, document.querySelector('#root'))
